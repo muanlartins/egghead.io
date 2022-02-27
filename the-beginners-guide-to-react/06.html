@@ -1,0 +1,25 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.17.6/babel.min.js"></script>
+    <script type="text/babel">
+        const luan = React.createElement('span', null, 'Luan');
+        const martins = React.createElement('span', null, ' Martins');
+
+        // const luanMartins = React.createElement(React.Fragment, null, luan, martins);
+
+        // const luanMartins = 
+        // <React.Fragment>
+        //     <span>Luan</span>
+        //     <span> Martins</span>
+        // </React.Fragment>
+
+        const luanMartins = 
+        <>
+            <span>Luan</span>
+            <span> Martins</span>
+        </>
+        ReactDOM.render(luanMartins, document.getElementById('root'));
+    </script>
+</body>
