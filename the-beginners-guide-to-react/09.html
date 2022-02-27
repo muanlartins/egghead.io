@@ -1,0 +1,37 @@
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.17.6/babel.js"></script>
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+
+    function CharacterCount({text}){
+      const length = text.length || 'no';
+      const characters = text.length ? 'characters' : <span class='color'>characters</span>
+      return (
+        <div>
+          <span class="color">'{text}'</span> has <span class="color">{length}</span> {characters}.
+        </div>
+      )
+    }
+
+    const element = (
+      <>
+        <CharacterCount text='Hello World' />
+        <CharacterCount text='Luan Martins' />
+        <CharacterCount text='' />
+      </>
+    )
+
+    ReactDOM.render(element, rootElement);
+  </script>
+  <style>
+    #root{
+      font-size: 48px;
+    }
+    .color{
+      color: #7080CC;
+    }
+  </style>
+</body>
