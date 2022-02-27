@@ -1,0 +1,17 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.17.6/babel.min.js"></script>
+    <script type="text/babel">
+        const rootElement = document.getElementById('root');
+        const firstName = 'Luan';
+        const lastName = 'Martins';
+        const className = 'container';
+        const children = firstName + ' ' + lastName;
+        const props = {children, className};
+        const element = 
+        <div {...props} className='not-container' />
+        ReactDOM.render(element, rootElement);
+    </script>
+</body>
