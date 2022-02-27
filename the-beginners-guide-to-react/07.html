@@ -1,0 +1,52 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.17.6/babel.min.js"></script>
+    <script type="text/babel">
+
+        // const element = 
+        //     <div class="container">
+        //         <div class="message">Luan Martins</div>
+        //         <div class="message">É incrível</div>
+        //     </div>;
+
+        // const message = (props) => 
+        //     <div class="message">
+        //         {props.msg}
+        //     </div>
+        // 
+        // const element = (
+        //     <div class="container">
+        //         {message({msg: 'Luan Martins'})}
+        //         {message({msg: 'É incrível'})}
+        //     </div>
+        // )
+
+        // const Message = (props) => 
+        //     <div class="message">
+        //         {props.msg}
+        //     </div>
+        // 
+        // const element = (
+        //     <div class="container">
+        //         <Message msg="Luan Martins" />
+        //         <Message msg="É incrível" />
+        //     </div>
+        // )
+
+        const Message = (props) => 
+            <div class="message">
+                {props.children}
+            </div>
+
+        const element = (
+            <div class="container">
+                <Message> Luan Martins </Message>
+                <Message> É incrível </Message>
+            </div>
+        )
+
+        ReactDOM.render(element, document.getElementById('root'));
+    </script>
+</body>
