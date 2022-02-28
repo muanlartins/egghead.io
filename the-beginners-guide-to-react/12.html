@@ -1,0 +1,66 @@
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.17.6/babel.js"></script>
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+
+    let state = {progress: 0};
+
+    function App() {
+      function handleClick() {
+        setState({progress: state.progress+1});
+      }
+      return (
+        <div id='container' className='container'>
+          <div className='rectangle'>
+            <div className='progress' style={{width: `${state.progress}%`}} />
+          </div>
+          <button className='button' onMouseOver={handleClick}>
+            Let's make progress
+          </button>
+        </div>
+      )
+    };
+
+    function setState(newState){
+      console.log(state.progress);
+      Object.assign(state, newState);
+      renderApp();
+    }
+
+    function renderApp() {
+      ReactDOM.render(<App />, rootElement);
+    }
+
+    renderApp();
+  </script>
+  <style>
+    .rectangle{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 50px;
+      border: 1px solid black;
+    }
+    .progress{
+      background: #7080c7;
+      height: 100%;
+    }
+    .button{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateY(-200px);
+      width: 200px;
+      height: 40px;
+      background: none;
+      color: none;
+      border: 1px solid #7080c7;
+      cursor: pointer;
+    }
+  </style>
+</body>
