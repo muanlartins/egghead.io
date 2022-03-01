@@ -1,0 +1,53 @@
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+
+    function App() {
+      const [progress, setProgress] = React.useState(0);
+      const handleClick = () => { if (progress < 100) return setProgress(progress+1) };
+      return (
+        <div id='container' className='container' tabIndex="0">
+          <div className='rectangle'>
+            <div className='progress' style={{width: `${progress}%`}} />
+          </div>
+          <button className='button' onClick={handleClick} onKeyDown={handleClick}>
+            Let's make progress
+          </button>
+        </div>
+      )
+    };
+      
+    ReactDOM.render(<App />, rootElement);
+  </script>
+  <style>
+    .rectangle{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 50px;
+      border: 1px solid black;
+    }
+    .progress{
+      background: #7080c7;
+      height: 100%;
+    }
+    .button{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateY(-200px);
+      width: 200px;
+      height: 40px;
+      background: none;
+      color: none;
+      border: 1px solid #7080c7;
+      cursor: pointer;
+    }
+  </style>
+</body>
