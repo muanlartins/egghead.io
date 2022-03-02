@@ -1,0 +1,30 @@
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script src="https://www.unpkg.com/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+
+    function App(){
+      const pRef = React.useRef();
+
+      React.useEffect(() => {
+        const pNode = pRef.current;
+        pNode.textContent = "Algum Outro Texto";
+      }, [])
+
+      return (
+        <div>
+          <p ref={pRef}>Algum Texto</p>
+        </div>
+      )
+    }
+      
+    ReactDOM.render(<App />, rootElement);
+  </script>
+  <style>
+    
+  </style>
+</body>
