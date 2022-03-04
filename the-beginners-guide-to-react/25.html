@@ -1,0 +1,59 @@
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script type="text/babel">
+    function Name({name, setName}){
+
+      return (
+        <div>
+          <label htmlFor="name">Name: </label>
+          <input id="name" value={name} onChange={event => setName(event.target.value)} />
+        </div>
+      )
+    }
+
+    function Color({color, setColor}){
+
+      return (
+        <div>
+          <label htmlFor="color">Color: </label>
+          <input id="color" value={color} onChange={event => setColor(event.target.value)} />
+        </div>
+      )
+    }
+
+    function Display({name, color}){
+      return (
+        name && color ? 
+        <div>
+          A cor favorita de {name} é {color} 😎
+        </div> 
+        : 
+        <div>
+        </div>
+      )
+    }
+
+    function App() {
+      const [name, setName] = React.useState('');
+      const [color, setColor] = React.useState('');
+
+      return (
+        <form>
+          <Name name={name} setName={setName} />
+          <Color color={color} setColor={setColor} />
+          <Display name={name} color={color} />
+        </form>
+      )
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'))
+  </script>
+  <style>
+    *{
+      margin: 1px;
+    }
+  </style>
+</body>
