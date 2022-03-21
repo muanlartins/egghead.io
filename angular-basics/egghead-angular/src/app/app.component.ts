@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: 
     `
-      <h1>{{title}}</h1>
+      <app-habit-list></app-habit-list>
     `,
   styles: [
     `
